@@ -44,7 +44,7 @@ function binarySearch(arr, target) {
     while (left <= right) {
         var mid = Math.floor((left + right) / 2);
         if (arr[mid] === target) {
-            return "".concat(target, " has been found at index ").concat(mid);
+            return mid;
         }
         else if (arr[mid] < target) {
             left = mid + 1;
@@ -57,4 +57,7 @@ function binarySearch(arr, target) {
 }
 var sortedArray = [4, 9, 11, 17, 23, 36, 48, 49, 51, 52, 66, 67, 68, 69, 73, 75, 78, 83, 85, 86, 87, 91, 100];
 var binarySortIndex = binarySearch(sortedArray, 86);
-console.log("number 86 is located at ".concat(binarySortIndex));
+// console.log("number 86 is located at ".concat(binarySortIndex));
+
+
+module.exports = {binarySearch};
