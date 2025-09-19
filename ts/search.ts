@@ -37,7 +37,31 @@ function sentinelLinearSearch(arr: number[],target:number){
         return -1;
     }
 }
-let arr = [2,4,55,11,16,13,9,90, 10, 12,14]
-let result = sentinelLinearSearch(arr, 9);
+// let arr = [2,4,55,11,16,13,9,90, 10, 12,14]
+// let result = sentinelLinearSearch(arr, 9);
 
-console.log(`the target is on the ${result+1}`);
+// console.log(`the target is on the ${result+1}`);
+
+function binarySearch(arr:number[],target:number){
+    let left = 0;
+    let right = arr.length -1;
+
+    while(left <= right){
+        let mid = Math.floor((left+right)/2)
+        if(arr[mid]=== target){
+            return `${target} has been found at index ${mid}`
+        }else if(arr[mid]<target){
+            left = mid+1
+        }else if(arr[mid]>target){
+            right = mid-1;
+        }
+    }
+
+    return "target not found in the list";
+}
+
+let sortedArray = [4,9,11,17,23,36,48,49,51,52,66,67,68,69,73,75,78,83,85,86,87,91,100];
+
+let binarySortIndex = binarySearch(sortedArray,86);
+
+console.log(`number 86 is located at ${binarySortIndex}`);
